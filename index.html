@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TENE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 id="header">האילוצים של</h1>
+
+        <!-- Authentication form -->
+        <form id="auth-form" class="form">
+            <label for="email">אימייל:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">סיסמה:</label>
+            <input type="password" id="password" name="password" required>
+            <label for="name">שם:</label>
+            <input type="text" id="name" name="name" required>
+            <button type="submit">התחבר / הירשם</button>
+        </form>
+
+        <!-- Date form -->
+        <form id="date-form" class="form" style="display:none;">
+            <p>אנא הזן את האילוצים שלך:</p>
+            <label for="date">בחר תאריך:</label>
+            <input type="date" id="date" name="date" required>
+            <button type="submit">הוסף</button>
+        </form>
+
+        <!-- Buttons for viewing dates and exporting -->
+        <div class="history-controls" style="display:none;">
+            <button id="view-all" class="view-all">הצג את כל האילוצים</button>
+            <button id="view-history" class="view-history">הצג היסטוריה לפי חודשים</button>
+        </div>
+
+        <ul id="dates-list" class="dates-list"></ul>
+        <div id="month-buttons" class="month-buttons" style="display:none;"></div>
+        <button id="export-csv" class="export-csv" style="display:none;">ייצא כ-CSV</button>
+    </div>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
